@@ -130,14 +130,20 @@ icons.forEach((oggetto) => {
 
 });
 
-
-
 inputDom.addEventListener("change", () => {
 
-   //qualcosa...
    containerCardsDom.innerHTML="";
+   icons.map((carta) => {
 
+      if (inputDom.value == carta.type) {
+         console.log("dentro IF " + carta.type);
+         return creaCarta(containerCardsDom, carta);
+      }   
+   });
 });
+
+
+
 
 
 function creaCarta(destinazione,oggetto) {

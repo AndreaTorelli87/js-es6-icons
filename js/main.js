@@ -113,6 +113,14 @@ let icons = [
 	}
 ];
 
+/*{
+   name: 'cat',
+   prefix: 'fa-',
+   type: 'animal',
+   family: 'fas',
+   color: 'orange'
+},*/
+
 const containerCardsDom = document.getElementById("containerCards");
 const inputDom = document.getElementById("input");
 
@@ -136,9 +144,8 @@ function creaCarta(destinazione,oggetto) {
 
    let carta = `  <div class="card m-3" style="width: 18rem;">
                      <div class="card-body p-4 text-center">
-                        <h2 class="card-title"><i class="fa-solid ${oggetto.prefix}${oggetto.name}"></i></h2>
+                        <h2 class="card-title"><i class="fa-solid ${oggetto.prefix}${oggetto.name}" style="color: ${oggetto.color};"></i></h2>
                         <h3 class="card-text">${oggetto.name}</h3>
-                        </div>
                      </div>
                   </div>` 
 

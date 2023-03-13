@@ -128,7 +128,6 @@ icons.forEach((oggetto) => creaCarta(containerCardsDom,oggetto));
 
 inputDom.addEventListener("change", () => {
 
-   console.log(generaNumeroRandom(0, 16)); 
    containerCardsDom.innerHTML="";
    icons.map((carta) => {
 
@@ -141,7 +140,7 @@ inputDom.addEventListener("change", () => {
 
 function generaNumeroRandom() {
    let characters = "0123456789abcdef"
-   let str = ""
+   let str = "#"
    for(let i = 0; i < 6; i++){
       str += characters[Math.floor(Math.random() * 16)]
    }
@@ -151,9 +150,9 @@ function generaNumeroRandom() {
 
 function creaCarta(destinazione,oggetto) {
 
-   let carta = `  <div class="card m-3" style="width: 18rem;">
+   let carta = `  <div class="card" style="width: 18rem;">
                      <div class="card-body p-4 text-center">
-                        <h2 class="card-title"><i class="fa-solid ${oggetto.prefix}${oggetto.name}" style="color: #${generaNumeroRandom()};"></i></h2>
+                        <h2 class="card-title"><i class="fa-solid ${oggetto.prefix}${oggetto.name}" style="color: ${generaNumeroRandom()};"></i></h2>
                         <h3 class="card-text">${oggetto.name}</h3>
                      </div>
                   </div>` 

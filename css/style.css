@@ -2,3 +2,22 @@
    font-family: sans-serif;
 }
 
+body {
+   background-color: #DDDDDD;
+}
+
+header {
+   background-color: #29B1DD;
+}
+
+#headerTop{
+   background-color: white;
+}
+
+h1{
+   color: #29B1DD;
+}
+
+.input-group{
+   padding: 2% 35%;
+}

@@ -10,13 +10,8 @@ header {
    background-color: #29B1DD;
 }
 
-#headerTop{
-   background-color: white;
-}
-
 h1{
    color: #29B1DD;
-   font-weight: bold;
 }
 
 .input-group{

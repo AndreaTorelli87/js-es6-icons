@@ -113,38 +113,29 @@ let icons = [
 	}
 ];
 
-/*{
-   name: 'cat',
-   prefix: 'fa-',
-   type: 'animal',
-   family: 'fas',
-   color: 'orange'
-},*/
 
 const containerCardsDom = document.getElementById("containerCards");
 const inputDom = document.getElementById("input");
 let type = [];
 
 icons.forEach((oggetto) => {
-   oggetto["color"] = generaColoreRandom();
+   oggetto.color = generaColoreRandom();
    creaCarta(containerCardsDom,oggetto);
    if (!type.includes(oggetto.type)){
       type.push(oggetto.type);
    }
-   
 });
 
-for (i=0 ; i<type.length; i++){
-   let options = `<option value="${type[i]}">${type[i]}</option>`;
+
+type.forEach(element => {
+   let options = `<option value="${element}">${element}</option>`;
    inputDom.innerHTML += options;
-}
+});
 
 
 inputDom.addEventListener("change", () => {
-
    containerCardsDom.innerHTML="";
    icons.map((carta) => {
-
       if (inputDom.value == carta.type || inputDom.value == "all") {
          return creaCarta(containerCardsDom, carta);
       }
@@ -164,15 +155,11 @@ function generaColoreRandom() {
    return str;
 }
 
-
 function creaCarta(destinazione,oggetto) {
-
-   let carta = `  <div class="card shadow-sm" style="width: 18rem;">
-                     <div class="card-body p-4 text-center">
-                        <h2 class="card-title"><i class="fa-solid ${oggetto.prefix}${oggetto.name}" style="color: ${oggetto.color};"></i></h2>
-                        <h3 class="card-text">${oggetto.name}</h3>
-                     </div>
-                  </div>` 
-
-   destinazione.innerHTML += carta;
+   destinazione.innerHTML += `<div class="card shadow-sm" style="width: 18rem;">
+											<div class="card-body p-4 text-center">
+												<h2 class="card-title"><i class="fa-solid ${oggetto.prefix}${oggetto.name}" style="color: ${oggetto.color};"></i></h2>
+												<h3 class="card-text">${oggetto.name}</h3>
+											</div>
+										</div>` 
 }
